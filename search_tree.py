@@ -47,6 +47,7 @@ class Node:
         else:
             return self.left.iterate() + [self] + self.right.iterate()
 
+    # TODO: chek range
     def range(self, start_key, end_key):
         if start_key <= self.key <= end_key:
             if start_key == end_key == self.key:
@@ -54,9 +55,12 @@ class Node:
             elif start_key == self.key:
                 return [self] + self.right.range(start_key, end_key)
             elif self.key == end_key:
-                return self.left.range()
-
+                return self.left.range(start_key, end_key) + [self]
             else:
+                return self.left.range(start_key, end_key) + [self] + self.right.range(start_key, end_key)
         else:
             return []
 
+    # TODO: pop (with height)
+    # TODO: balance
+    # TODO: tests
