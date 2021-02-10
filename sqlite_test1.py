@@ -1,6 +1,6 @@
 import sqlite3
 
-con = sqlite3.connect('first_test.db')
+con = sqlite3.connect('dataset/first_test.db')
 cursObj = con.cursor()
 
 mode = input()

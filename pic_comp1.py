@@ -4,7 +4,7 @@ import numpy as np
 
 INF = 1e9
 mode = 'RGB'
-im = Image.open('Lenna.png')
+im = Image.open('dataset/Lenna.png')
 nimg = Image.new(mode, im.size)
 draw = ImageDraw.Draw(nimg)
 pix = im.getdata()

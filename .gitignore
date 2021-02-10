@@ -1,5 +1,6 @@
 # Project exclude paths
 /venv/
+/dataset/
 
 
 # This is ignores from https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
