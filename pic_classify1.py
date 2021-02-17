@@ -98,10 +98,10 @@ for i in range(0, 4):
 for arr in teach, val:
     for i in range(0, len(arr)):
         arr[i] = m_colors.predict(arr[i])
-        a = []
+        curr_arr = []
         for j in range(0, k_colors):
-            a.append(arr[i].count(j))
-        arr[i] = a
+            curr_arr.append(arr[i].count(j))
+        arr[i] = curr_arr
 m_classes = KNeighborsClassifier(n_neighbors=k_neighbors, weights=w, algorithm=mode, n_jobs=n_job)
 m_classes.fit(teach, target_teach)
 print(target_val, m_classes.predict(val))
