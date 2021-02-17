@@ -5,6 +5,8 @@ from sklearn.cluster import KMeans
 from sklearn.neighbors import KNeighborsClassifier
 from os import walk
 
+# For proper work execute in . directory files artists_setup.sh and download.sh in given order
+
 k_colors = 8
 k_neighbors = 3
 teach = []
