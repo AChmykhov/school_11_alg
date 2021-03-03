@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from sklearn.neighbors import KNeighborsClassifier
 from os import walk
 
-# For proper work execute in . directory files artists_setup.sh and download.sh in given order
+# For proper work setup environment. Read more in ./pic_classify_env_README.md
 
 k_colors = 8
 k_neighbors = 3
@@ -100,7 +100,7 @@ for arr in teach, val:
         arr[i] = m_colors.predict(arr[i])
         curr_arr = []
         for j in range(0, k_colors):
-            curr_arr.append(arr[i].count(j))
+            curr_arr.append(list(arr[i]).count(j))
         arr[i] = curr_arr
 m_classes = KNeighborsClassifier(n_neighbors=k_neighbors, weights=w, algorithm=mode, n_jobs=n_job)
 m_classes.fit(teach, target_teach)
