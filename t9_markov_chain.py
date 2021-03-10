@@ -21,10 +21,10 @@ def train(path):
         else:
             next_curr = curr
         A[next_curr][curr] += 1
-    s = np.sum(A, axis=1)
+    s = np.sum(A, axis=0)
     for i in range(0, count_pairs):
         for j in range(0, count_pairs):
-            P[i][j] = A[i][j] / s[i]
+            P[i][j] = A[i][j] / s[j]
     return P, A, s, pairs, count_pairs
 
 
@@ -39,10 +39,10 @@ def generate(P, pairs, count_pairs):
             out += state
             v = np.zeros(count_pairs)
             v[pairs.index(state)] = 1
-            print(np.dot(P, v). shape, v.shape)
+            v.reshape((-1, 1))
+            # print(sum(np.dot(P, v)))                            # debug print
             state = np.random.choice(a=pairs, p=np.dot(P, v))
     print(out)
-    print(P)
 
 
 path = "./dataset/cherchill_iron_certain_speech.txt"
