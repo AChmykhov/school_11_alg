@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/for_temp_progs.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/pic_classify1.py">
           <value>
             <Attribute>
